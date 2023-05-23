@@ -7,20 +7,18 @@ import android.os.Bundle
 import android.os.Handler
 
 
-@SuppressLint("CustomSplashScreen")
-class splashscreen : AppCompatActivity() {
 
-    private val SPLASH_TIME: Long = 3000
+class splashscreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashscreen)
+        supportActionBar?.hide()
 
         Handler().postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
 
-        }
-        ,5000)
+        }, 3000)
     }
 }
